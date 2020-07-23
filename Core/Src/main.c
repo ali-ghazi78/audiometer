@@ -98,7 +98,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-
+//asd
   /* USER CODE END 2 */
 
   /* Infinite loop */
