@@ -25,10 +25,12 @@
 /* USER CODE BEGIN Includes */
 
  I2C_HandleTypeDef hi2c1;
+ SPI_HandleTypeDef hspi1;
 
 #include "ssd1306_my.h"
 #include "stm32f1xx_hal_i2c.h"
-/* USER CODE END Includes */
+#include "ad9833.h"
+ /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -104,9 +106,10 @@ int main(void)
   ssd1306_Init();
 
   ssd1306_Fill(Black);
-  ssd1306_WriteString("sala", Font_7x10, White);
+  ssd1306_WriteString("salam chetori", Font_7x10, White);
   ssd1306_UpdateScreen();
 
+  ad9833_set_mode_and_freq(ad9833_sin, 2000);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -114,6 +117,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 	  HAL_Delay(1000);
+
 
   }
   /* USER CODE END 3 */
