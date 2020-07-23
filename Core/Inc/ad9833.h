@@ -15,7 +15,10 @@ extern SPI_HandleTypeDef hspi1;
 
 enum ad9833_mode{
 	ad9833_sin=0,
-	ad9833_tri=1
+	ad9833_tri=1,
+	ad9833_pulse=2,
+	ad9833_pulse2om=3
+
 };
 
 
@@ -40,19 +43,24 @@ void ad9833_send_command(uint16_t command)
 #define ad9833_send_data ad9833_send_command
 
 
-void ad9833_set_mode_and_freq(char mode,uint32_t freq )
+void ad9833_set_mode_and_freq(char mode,float freq )
 {
-	if(!mode)
-		ad9833_send_command( 1<<13 | 1<<3 ); ///sin mode
-	else
-		ad9833_send_command( 1<<13 | 1<<3| 1<<1); //tri mode
+	uint32_t temp = 0;
+	if(mode==0)
+		ad9833_send_command( (1<<13)  ); ///sin mode
+	else if (mode==1)
+		ad9833_send_command( (1<<13) | (1<<1)); //tri mode
+	else if (mode==2)
+			ad9833_send_command( (1<<13) |(1<<5)| (1<<3)); //pulse mode
+	else if (mode==3)
+			ad9833_send_command( (1<<13) |(1<<5)); //pulse2om mode
 
 
 	freq = (float)freq*10.73741824;
-
+	temp = freq;
 	//send lsb first
-	ad9833_send_command((freq%(0xffff))| 1<<14);
-	ad9833_send_command((freq/(0xffff))| 1<<14);
+	ad9833_send_command((temp%(0xffff))| 1<<14);
+	ad9833_send_command((temp/(0xffff))| 1<<14);
 
 
 	//#268435456/25000000=10.73741824

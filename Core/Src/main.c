@@ -115,7 +115,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  ad9833_set_mode_and_freq(ad9833_sin, 1);
+	  ad9833_set_mode_and_freq(ad9833_sin, 0.251);
 
 	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 	  HAL_Delay(1000);
