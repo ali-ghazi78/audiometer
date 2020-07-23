@@ -22,13 +22,14 @@ enum ad9833_mode{
 void my_spi_write16(SPI_HandleTypeDef *hspi,uint16_t my_data,GPIO_TypeDef *SLAVE_GPIO,uint16_t SLAVE_GPIO_PIN)
 {
 
-//	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1);
-//	HAL_Delay(1);
-//	HAL_GPIO_WritePin(SLAVE_GPIO, SLAVE_GPIO_PIN, 0);
-//	HAL_Delay(10);
-	HAL_SPI_Transmit(hspi, my_data, 2, 800);
-//	HAL_Delay(5);
-//	HAL_GPIO_WritePin(SLAVE_GPIO, SLAVE_GPIO_PIN, 1);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0);
+	HAL_SPI_Transmit(hspi, &my_data, 1, 800);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
+
+
+
+
+
 
 }
 void ad9833_send_command(uint16_t command)
@@ -42,16 +43,16 @@ void ad9833_send_command(uint16_t command)
 void ad9833_set_mode_and_freq(char mode,uint32_t freq )
 {
 	if(!mode)
-		ad9833_send_command( 1<<13 ); ///sin mode
+		ad9833_send_command( 1<<13 | 1<<3 ); ///sin mode
 	else
-		ad9833_send_command( 1<<13 | 1<<1); //tri mode
+		ad9833_send_command( 1<<13 | 1<<3| 1<<1); //tri mode
 
 
 	freq = (float)freq*10.73741824;
 
 	//send lsb first
-	ad9833_send_data((freq%(0xffff))| 1<<14);
-	ad9833_send_data((freq/(0xffff))| 1<<14);
+	ad9833_send_command((freq%(0xffff))| 1<<14);
+	ad9833_send_command((freq/(0xffff))| 1<<14);
 
 
 	//#268435456/25000000=10.73741824
