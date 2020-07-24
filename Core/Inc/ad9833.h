@@ -25,10 +25,10 @@ enum ad9833_mode{
 void my_spi_write16(SPI_HandleTypeDef *hspi,uint16_t my_data,GPIO_TypeDef *SLAVE_GPIO,uint16_t SLAVE_GPIO_PIN)
 {
 
+
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0);
 	HAL_SPI_Transmit(hspi, &my_data, 1, 800);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
-
 
 
 
@@ -43,8 +43,19 @@ void ad9833_send_command(uint16_t command)
 #define ad9833_send_data ad9833_send_command
 
 
-void ad9833_set_mode_and_freq(char mode,float freq )
+
+void ad9833_disable( )
 {
+	ad9833_send_command(  (1<<8)|(1<<6) ); ///sin mode
+
+
+}
+
+
+void ad9833_set_mode_and_freq(char mode,uint32_t freq )
+{
+
+
 	uint32_t temp = 0;
 	if(mode==0)
 		ad9833_send_command( (1<<13)  ); ///sin mode
@@ -56,11 +67,13 @@ void ad9833_set_mode_and_freq(char mode,float freq )
 			ad9833_send_command( (1<<13) |(1<<5)); //pulse2om mode
 
 
-	freq = (float)freq*10.73741824;
+	freq =(float) freq*10.73741824;
 	temp = freq;
+	//temp = 10000;
 	//send lsb first
-	ad9833_send_command((temp%(0xffff))| 1<<14);
-	ad9833_send_command((temp/(0xffff))| 1<<14);
+	ad9833_send_command((temp%(1<<14))| 1<<14);
+	ad9833_send_command((temp>>14)| 1<<14);
+
 
 
 	//#268435456/25000000=10.73741824

@@ -52,6 +52,8 @@ SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
 
+
+uint32_t pulse=18000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,9 +117,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  ad9833_set_mode_and_freq(ad9833_sin, 0.251);
+	  ssd1306_SetCursor(0, 14);
+	  ssd1306_WriteString("freq = ", Font_7x10, White);
+	  ssd1306_PutInt(pulse ,Font_7x10, White);
+	  ssd1306_WriteString("        ", Font_7x10, White);
 
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	  ssd1306_UpdateScreen();
+	  ad9833_set_mode_and_freq(ad9833_sin, pulse );
+	 // ad9833_disable();
+
+
 	  HAL_Delay(1000);
 
 
@@ -258,6 +267,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PC14 */
+  GPIO_InitStruct.Pin = GPIO_PIN_14;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PA3 */
   GPIO_InitStruct.Pin = GPIO_PIN_3;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -271,10 +286,29 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 }
 
 /* USER CODE BEGIN 4 */
+ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  /* Prevent unused argument(s) compilation warning */
+  if(GPIO_Pin == GPIO_PIN_14)
+  {
+	  pulse+=10;
+	  if(pulse>25000)
+		  pulse=0;
 
+  }
+  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+
+  /* NOTE: This function Should not be modified, when the callback is needed,
+           the HAL_GPIO_EXTI_Callback could be implemented in the user file
+   */
+}
 /* USER CODE END 4 */
 
 /**
