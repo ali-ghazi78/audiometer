@@ -653,7 +653,7 @@ void ssd1306_SetCursor(unsigned char x, unsigned char y) {
  void ssd1306_ClearScreen()
 {
     ssd1306_Fill(Black);
-    ssd1306_UpdateScreen();
+  //  ssd1306_UpdateScreen();
     ssd1306_SetCursor(0,0);
 }
 
