@@ -56,8 +56,11 @@ TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN PV */
 
 
-int32_t pulse=100;
+int32_t pulse =100;
 int32_t db=100;
+char state2=0;
+char state=0;
+
 
 /* USER CODE END PV */
 
@@ -127,9 +130,9 @@ int main(void)
   ssd1306_Fill(Black);
   ssd1306_WriteString("salam chetori", Font_7x10, White);
   ssd1306_UpdateScreen();
-  HAL_TIM_Base_Init(&htim2);
 
-  HAL_TIM_Base_Start(&htim2);
+  HAL_TIM_Base_Start_IT(&htim2);
+
   HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
 
   while (1)
@@ -140,6 +143,7 @@ int main(void)
 
 
 	  db = TIM1->CNT;
+	  db*=100;
 	  ssd1306_SetCursor(0, 14);
 	  ssd1306_WriteString("freq = ", Font_7x10, White);
 	  ssd1306_PutInt(pulse ,Font_7x10, White);
@@ -148,10 +152,16 @@ int main(void)
 	  ssd1306_WriteString("db   = ", Font_7x10, White);
 	  ssd1306_PutInt(db ,Font_7x10, White);
 	  ssd1306_WriteString("        ", Font_7x10, White);
+	  ssd1306_SetCursor(0,  30);
+	  ssd1306_WriteString("c   = ", Font_7x10, White);
+	  ssd1306_PutInt(state2,Font_7x10, White);
+	  ssd1306_WriteString("        ", Font_7x10, White);
+
+
 
 
 	  ssd1306_UpdateScreen();
-	  ad9833_set_mode_and_freq(ad9833_sin, pulse );
+	  ad9833_set_mode_and_freq(ad9833_sin, db );
 	 // ad9833_disable();
 	  //ssd1306_ClearScreen();
 
@@ -184,9 +194,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI_DIV2;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL3;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -195,7 +203,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
@@ -347,7 +355,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 100;
+  htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 65535;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -400,16 +408,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA3 */
-  GPIO_InitStruct.Pin = GPIO_PIN_3;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -432,65 +434,93 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-static char state=0;
+
+
+
+ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+ {
+
+//	 HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	 state2 ++ ;
+	 if(state2>250)
+		 state2=250;
+ }
+
+
+
  void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+
 	 char valid = 0;
-	// __disable_irq();
+	 __HAL_TIM_DISABLE(&htim2);
 
-	 //HAL_Delay(5);
-  /* Prevent unused argument(s) compilation warning */
+	 counter =	__HAL_TIM_GET_COUNTER(&htim2);
 
-
-	 counter = TIM2->CNT;
-	 if(HAL_GPIO_ReadPin(encod1_GPIO_Port, encod1_Pin)==1)  ///rising edge
+	 if(state2>=2&&state2<=50)
 	 {
-		 state =HAL_GPIO_ReadPin(dir1_GPIO_Port, dir1_Pin);
+		 valid = 1;
 
-		 counter =0;
-
-		 TIM2->CNT = 0;
+	 }
+	 else
 		 valid =0 ;
 
+
+
+	 if(valid)
+	 {
+
+		if(GPIO_Pin == encod1_Pin)
+		{
+			  if(state==0)
+			  {
+				  pulse+=1;
+				  if(pulse>20000)
+					  pulse=0;
+			  }
+			  else
+			  {
+				  pulse-=1;
+				  if(pulse<0)
+					  pulse=20000;
+
+			  }
+		}
+	 }
+
+
+	 if(HAL_GPIO_ReadPin(encod1_GPIO_Port,encod1_Pin)==1)
+	 {
+		 if(HAL_GPIO_ReadPin(dir1_GPIO_Port,dir1_Pin)==0)
+		 {
+			 state = 1 ;
+
+		 }
+		 else
+		 {
+			 state = 0 ;
+
+		 }
 
 	 }
 	 else
 	 {
-		 if(counter>800)
+		 if(HAL_GPIO_ReadPin(dir1_GPIO_Port,dir1_Pin)==1)
 		 {
-			 valid = 1;
+			 state = 1 ;
 
-		}
+		 }
 		 else
-			 valid =0 ;
+		 {
+			 state = 0 ;
+
+		 }
 
 	 }
-	 if(valid)
-	 {
-		 counter =0;
+	 __HAL_TIM_SET_COUNTER(&htim2,0);
+	 state2 = 0;
 
-		 TIM2->CNT = 0;
-		 valid =0 ;
-
-		if(GPIO_Pin == encod1_Pin)
-		{
-		  if(state==0)
-		  {
-			  pulse+=1;
-			  if(pulse>20000)
-				  pulse=0;
-		  }
-		  else
-		  {
-			  pulse-=1;
-			  if(pulse<0)
-				  pulse=20000;
-
-		  }
-		}
-	 }
-
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	 HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	 __HAL_TIM_ENABLE(&htim2);
 
 //	 __enable_irq();
 
