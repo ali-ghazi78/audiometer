@@ -1,0 +1,151 @@
+Added Component: Designator=*(F_N_MOS_SOT23a)
+Added Component: Designator=R?(AXIAL-0.5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.5 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "3.9k"; VariantName = "[No Variations]"
+Added Component: Designator=R?(VR5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Variable Resistor, Thru-Hole; 3 Leads"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "VR5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Set Position"; Value = "0.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sim Note"; Value = "Enter the Resistance value and the set point into parameter fields."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Component: Designator=R?(C0805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "J1-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Added Component: Designator=R?(C0805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "J1-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Added Component: Designator=RT?(6-0805_N)
+Add component (AddParameter): Name = "Code_IPC"; Value = "RESC2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor 0805 Case Size"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "6-0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Mar-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=RT?(6-0805_N)
+Add component (AddParameter): Name = "Code_IPC"; Value = "RESC2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor 0805 Case Size"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "6-0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Mar-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=RT?(6-0805_N)
+Add component (AddParameter): Name = "Code_IPC"; Value = "RESC2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor 0805 Case Size"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "6-0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Mar-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=RT?(6-0805_N)
+Add component (AddParameter): Name = "Code_IPC"; Value = "RESC2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor 0805 Case Size"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "6-0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Mar-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=S?(TE FSMSMTR)
+Added Component: Designator=S?(TE FSMSMTR)
+Added Component: Designator=S?(TE FSMSMTR)
+Added Component: Designator=S?(TE FSMSMTR)
+Added Pin To Net: NetName=GND Pin=*-4
+Added Pin To Net: NetName=GND Pin=*-S
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=+3.3 Pin=RT?-1
+Added Pin To Net: NetName=+3.3 Pin=RT?-1
+Added Pin To Net: NetName=+3.3 Pin=RT?-1
+Added Pin To Net: NetName=+3.3 Pin=RT?-1
+Added Pin To Net: NetName=GND Pin=S?-2
+Added Pin To Net: NetName=GND Pin=S?-2
+Added Pin To Net: NetName=GND Pin=S?-2
+Added Pin To Net: NetName=GND Pin=S?-2
+Added Pin To Net: NetName=buzzer Pin=R?-2
+Added Net: Name=buzzer
+Added Pin To Net: NetName=KEY1 Pin=RT?-2
+Added Pin To Net: NetName=KEY1 Pin=S?-1
+Added Pin To Net: NetName=KEY1 Pin=U?-22
+Added Net: Name=KEY1
+Added Pin To Net: NetName=KEY2 Pin=RT?-2
+Added Pin To Net: NetName=KEY2 Pin=S?-1
+Added Pin To Net: NetName=KEY2 Pin=U?-21
+Added Net: Name=KEY2
+Added Pin To Net: NetName=KEY3 Pin=RT?-2
+Added Pin To Net: NetName=KEY3 Pin=S?-1
+Added Pin To Net: NetName=KEY3 Pin=U?-19
+Added Net: Name=KEY3
+Added Pin To Net: NetName=KEY4 Pin=RT?-2
+Added Pin To Net: NetName=KEY4 Pin=S?-1
+Added Pin To Net: NetName=KEY4 Pin=U?-18
+Added Net: Name=KEY4
+Added Pin To Net: NetName=Net*_3 Pin=*-3
+Added Pin To Net: NetName=Net*_3 Pin=*-6
+Added Net: Name=Net*_3
+Added Pin To Net: NetName=Net*_G Pin=*-G
+Added Pin To Net: NetName=Net*_G Pin=R?-2
+Added Net: Name=Net*_G
+Added Net: Name=Netbuzzer?_2
+Added Pin To Net: NetName=Netmosn?_G Pin=R?-1
+Added Pin To Net: NetName=Netmosn?_G Pin=R?-2
+Added Net: Name=Netmosn?_G
+Added Pin To Net: NetName=OUTA Pin=C?-2
+Added Net: Name=OUTA
+Added Pin To Net: NetName=OUTB Pin=C?-2
+Added Net: Name=OUTB
+Added Member To Class: ClassName=audiometer Member=Component * S_LED_smd
+Added Member To Class: ClassName=audiometer Member=Component * S_jack3.5
+Added Member To Class: ClassName=audiometer Member=Component * S_key6pin
+Added Member To Class: ClassName=audiometer Member=Component * S_TDA1308
+Added Member To Class: ClassName=audiometer Member=Component * S_key6pin
+Added Member To Class: ClassName=audiometer Member=Component * S_OLED
+Added Member To Class: ClassName=audiometer Member=Component * S_LM1117
+Added Member To Class: ClassName=audiometer Member=Component C? Cap Pol3
+Added Member To Class: ClassName=audiometer Member=Component C? Cap Pol3
+Added Member To Class: ClassName=audiometer Member=Component C? Cap Pol3
+Added Member To Class: ClassName=audiometer Member=Component C? Cap Pol3
+Added Member To Class: ClassName=audiometer Member=Component P? Header 6
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? RPot
+Added Member To Class: ClassName=audiometer Member=Component R? Res3
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component R? Res Semi
+Added Member To Class: ClassName=audiometer Member=Component RT? Res Thermal
+Added Member To Class: ClassName=audiometer Member=Component RT? Res Thermal
+Added Member To Class: ClassName=audiometer Member=Component RT? Res Thermal
+Added Member To Class: ClassName=audiometer Member=Component RT? Res Thermal
+Added Member To Class: ClassName=audiometer Member=Component S? SPST-NO
+Added Member To Class: ClassName=audiometer Member=Component S? SPST-NO
+Added Member To Class: ClassName=audiometer Member=Component S? SPST-NO
+Added Member To Class: ClassName=audiometer Member=Component S? SPST-NO
+Added Member To Class: ClassName=audiometer Member=Component U? STM32F103C8T6

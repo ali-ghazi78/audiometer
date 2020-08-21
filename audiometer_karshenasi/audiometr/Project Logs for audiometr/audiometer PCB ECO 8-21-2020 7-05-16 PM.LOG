@@ -1,0 +1,3 @@
+Added Member To Class: ClassName=audiometer Member=Component * S_PHOENIX_2_PIN
+Added Member To Class: ClassName=audiometer Member=Component * S_LM1117
+Added Member To Class: ClassName=audiometer Member=Component U? STM32F103C8T6
