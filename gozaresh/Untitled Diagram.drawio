@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-06T09:17:03.835Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="569dhXMp8GW-x_k0KhcM" version="14.4.4" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-03-06T09:20:55.346Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="utM3-0eHAfRYUzbrb3BW" version="14.4.4" type="github" pages="3">
   <diagram id="BR766uL-tzEw2Tya0w2j" name="Page-1">
     <mxGraphModel dx="2595" dy="1228" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -139,6 +139,58 @@
         </mxCell>
         <mxCell id="1IxcGAI95SvGZL0qQdbz-2" value="&lt;font color=&quot;#ff6666&quot; style=&quot;font-size: 16px&quot;&gt;unknown SPL&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-30;" vertex="1" parent="Fu1np6PYE1v-jHuADEom-1">
           <mxGeometry x="320" y="238" width="48" height="10" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="bDoAaf_tT94AD-InFwk-" name="Page-3">
+    <mxGraphModel dx="1038" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-0" />
+        <mxCell id="I3OleriWst1GqBUQ6zLn-1" parent="I3OleriWst1GqBUQ6zLn-0" />
+        <mxCell id="I3OleriWst1GqBUQ6zLn-2" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/news-and-magazine/512/information-128.png;fillColor=#00FF80;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="270" y="160" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="I3OleriWst1GqBUQ6zLn-1" source="I3OleriWst1GqBUQ6zLn-4" target="I3OleriWst1GqBUQ6zLn-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-4" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#d6b656;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;fillColor=#fff2cc;direction=north;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="378" y="132" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="I3OleriWst1GqBUQ6zLn-1" source="I3OleriWst1GqBUQ6zLn-6" target="I3OleriWst1GqBUQ6zLn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-6" value="tone generator" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="110" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-7" value="ADC" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="470" y="100" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-9" value="unknown mic&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="370" y="100" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="I3OleriWst1GqBUQ6zLn-1" source="I3OleriWst1GqBUQ6zLn-11" target="I3OleriWst1GqBUQ6zLn-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-11" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#9673a6;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;fillColor=#e1d5e7;direction=north;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="378" y="250" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="I3OleriWst1GqBUQ6zLn-1" source="I3OleriWst1GqBUQ6zLn-12" target="I3OleriWst1GqBUQ6zLn-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="360" />
+              <mxPoint x="150" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-12" value="ADC" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="470" y="218" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-14" value="reference mic" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="378" y="218" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="I3OleriWst1GqBUQ6zLn-19" value="amplitude setting" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="I3OleriWst1GqBUQ6zLn-1">
+          <mxGeometry x="110" y="230" width="80" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
